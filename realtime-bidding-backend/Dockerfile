@@ -1,16 +1,25 @@
-# Use Node.js base image
-FROM node:18
+# Stage 1: Build
+FROM node:18 AS build
 
-# Set working directory
 WORKDIR /app
 
-# Copy package.json and install dependencies
 COPY package*.json ./
 RUN npm install
 
-# Copy the source code
 COPY . .
 
-# Expose port and run the app
+RUN npm run build
+
+# Stage 2: Runtime
+FROM node:18
+
+WORKDIR /app
+
+COPY package*.json ./
+RUN npm install --only=production
+
+COPY --from=build /app/dist ./dist
+
 EXPOSE 3000
-CMD ["npm", "run", "start:dev"]
+
+CMD ["node", "dist/main"]
