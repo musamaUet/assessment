@@ -1,15 +1,17 @@
-import { ConfigModule } from '@nestjs/config';
+import { Module } from '@nestjs/common';
+import { TypeOrmModule } from '@nestjs/typeorm';
+import { ItemsModule } from './items/items.module';
+import { BidsModule } from './bids/bids.module';
 
 @Module({
   imports: [
-    ConfigModule.forRoot(), // Load .env file
     TypeOrmModule.forRoot({
       type: 'postgres',
-      host: process.env.DATABASE_HOST,
-      port: parseInt(process.env.DATABASE_PORT, 10),
-      username: process.env.DATABASE_USER,
-      password: process.env.DATABASE_PASSWORD,
-      database: process.env.DATABASE_NAME,
+      host: 'localhost',
+      port: 5432,
+      username: 'user',
+      password: 'password',
+      database: 'auction',
       autoLoadEntities: true,
       synchronize: true,
     }),
