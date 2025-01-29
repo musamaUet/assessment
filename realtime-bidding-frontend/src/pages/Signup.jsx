@@ -25,7 +25,7 @@ export default function Signup() {
     const { signup } = useSignupService();
 
     /* HANDLERS */
-    const onSignupDetailsChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const onSignupDetailsChange = (e) => {
         const { name, value } = e.target;
         setSignupDetails((prev) => ({
             ...prev,

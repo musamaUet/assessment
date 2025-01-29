@@ -1,11 +1,11 @@
-import App from './src/App.tsx';
+import App from './App.jsx';
 import { StrictMode } from 'react';
 import { createRoot } from 'react-dom/client';
 import { Toaster } from 'react-hot-toast';
 import { BrowserRouter as Router } from 'react-router-dom';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { Provider } from 'react-redux';
-import { persistor, store } from '@/redux/store.ts';
+import { persistor, store } from './redux/store';
 import { PersistGate } from "redux-persist/integration/react";
 
 import './assets/styles/app.css';
