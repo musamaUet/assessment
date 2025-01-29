@@ -1,8 +1,6 @@
 "use client";
 
-import { Methods } from "@/constants/enum";
 import { useState, useEffect } from "react";
-import { networkRequest } from "@/services/api";
 import { Button } from "@/components/ui/button";
 import {
   Table,
@@ -12,7 +10,6 @@ import {
   TableHeader,
   TableRow,
 } from "@/components/ui/table";
-import { jobService } from "@/services/job.service";
 
 export default function JobApplicationsTable() {
   const [applications, setApplications] = useState([]);
@@ -29,19 +26,19 @@ export default function JobApplicationsTable() {
   }, [pagination.currentPage]);
 
   const fetchApplications = async (page) => {
-    try {
-      setLoading(true);
-      const response = await jobService.getAppliedJobs({page, perPage: pagination.perPage});
-      console.log("response", response);
-      if (response.data) {
-        setApplications(response.data.records);
-        setPagination(response.data.paginationInfo);
-      }
-    } catch (error) {
-      console.error("Error fetching job applications:", error);
-    } finally {
-      setLoading(false);
-    }
+    // try {
+    //   setLoading(true);
+    //   const response = await jobService.getAppliedJobs({page, perPage: pagination.perPage});
+    //   console.log("response", response);
+    //   if (response.data) {
+    //     setApplications(response.data.records);
+    //     setPagination(response.data.paginationInfo);
+    //   }
+    // } catch (error) {
+    //   console.error("Error fetching job applications:", error);
+    // } finally {
+    //   setLoading(false);
+    // }
   };
 
   const handlePageChange = (newPage) => {

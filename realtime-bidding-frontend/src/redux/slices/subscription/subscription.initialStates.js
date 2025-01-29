@@ -1,13 +1,4 @@
-interface ISubscriptionState {
-  loading: boolean;
-  subscription?: null;
-  plans?: any[];
-  token?: string | null;
-  error?: string | null;
-  message?: string | null;
-}
-
-const initialSubscriptionState: ISubscriptionState = {
+const initialSubscriptionState = {
   loading: false,
   subscription: null,
   plans: [],

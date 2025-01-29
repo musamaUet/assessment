@@ -7,7 +7,7 @@ export const getPlans = createAsyncThunk(
     try {
       const response = await subscriptionService.getPlans();
       return response;
-    } catch (error: any) {
+    } catch (error) {
       return rejectWithValue(
         error.response?.data || "An error occurred while registering"
       );

@@ -5,9 +5,9 @@ import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 
 const SubscriptionModule = () => {
-    const dispatch: any = useDispatch();
+    const dispatch = useDispatch();
 
-    const { plans } = useSelector((state: any) => state.subscription);
+    const { plans } = useSelector((state) => state.subscription);
 
     console.log('plans', plans);
 
@@ -19,7 +19,7 @@ const SubscriptionModule = () => {
             <Title size="h5">Choose your plan</Title>
 
             <div id="plans" className="w-full flex flex-col items-center gap-6">
-                {plans && plans?.map((plan: any) => (
+                {plans && plans?.map((plan) => (
                     plan.title !== 'Trial' && (<PlanCard plan={plan} />)
                 ))}
             </div>

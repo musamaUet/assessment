@@ -7,7 +7,6 @@ import Subscription from "./pages/Subscription";
 import { ROUTES } from "./constants/routes";
 import DefaultLayout from "./components/Layout";
 import { isAuthenticated } from "./utils/utils";
-import JobProfile from "./pages/JobProfile";
 import SavedQuestions from "./pages/SavedQuestions";
 
 const {
@@ -15,7 +14,6 @@ const {
   HOME,
   SIGN_UP,
   SUBSCRIPTION,
-  MANAGE_JOB_PROFILE,
   SAVED_QUESTIONS,
 } = ROUTES;
 
@@ -59,16 +57,6 @@ const AppRoutes = () => {
             <AuthGuard>
               <DefaultLayout>
                 <SavedQuestions />
-              </DefaultLayout>
-            </AuthGuard>
-          }
-        />
-        <Route
-          path={MANAGE_JOB_PROFILE}
-          element={
-            <AuthGuard>
-              <DefaultLayout>
-                <JobProfile />
               </DefaultLayout>
             </AuthGuard>
           }
