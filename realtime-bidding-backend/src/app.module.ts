@@ -3,6 +3,8 @@ import { TypeOrmModule } from '@nestjs/typeorm';
 import { ItemsModule } from './items/items.module';
 import { BidsModule } from './bids/bids.module';
 import { SocketGateway } from './services/socket.service';
+import { UsersModule } from './users/user.module';
+import { NotificationsModule } from './notifications/notifications.module';
 
 @Module({
   imports: [
@@ -19,6 +21,8 @@ import { SocketGateway } from './services/socket.service';
     SocketGateway,
     ItemsModule,
     BidsModule,
+    UsersModule,
+    NotificationsModule,
   ],
 })
 export class AppModule {}

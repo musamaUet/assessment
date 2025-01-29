@@ -1,17 +1,9 @@
 # NestJS User Management Project
 
 ## Overview
-A user management service built with NestJS. Includes:
+A bids management service built with NestJS. Includes:
 - **PostgreSQL**: Data storage.
-- **Redis**: Caching.
-- **RabbitMQ**: Messaging.
 - **Docker Compose**: Service management.
-
-### Features
-1. Create and list users with pagination and filtering.
-2. Cache frequently accessed data in Redis.
-3. Send a welcome message to RabbitMQ on user creation.
-4. Graceful RabbitMQ connection handling.
 
 ---
 
@@ -32,14 +24,6 @@ POSTGRES_USER=postgres
 POSTGRES_PASSWORD=password
 POSTGRES_DB=user-management
 
-### Redis
-REDIS_HOST=redis
-REDIS_PORT=6379
-
-### RabbitMQ
-RABBITMQ_URL=amqp://rabbitmq
-RABBITMQ_QUEUE=welcomeQueue
-
 ### Steps to Run
 Start services:
 ```bash
@@ -53,28 +37,4 @@ Verify logs for successful connections.
 ## API Documentation
 
 ### Base URL
-http://localhost:3000
-
-### Endpoints
-
-#### 1. Create a User
-- **URL**: `/users`
-- **Method**: `POST`
-- **Payload**:
-  ```json
-  {
-    "name": "John Doe",
-    "email": "john.doe@example.com",
-    "age": 25
-  }
-
-. List All Users
-URL: /users
-Method: GET
-Query Params:
-page (default: 1)
-limit (default: 10)
-Example:
-bash
-Copy code
-GET /users?page=1&limit=5
+http://localhost:3017
