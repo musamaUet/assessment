@@ -5,7 +5,7 @@ function AuctionDashboard() {
   const [auctions, setAuctions] = useState([]);
 
   useEffect(() => {
-    fetch('/items') // Fetch auction items
+    fetch('/items')
       .then((res) => res.json())
       .then(setAuctions);
   }, []);
