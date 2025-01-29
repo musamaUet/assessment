@@ -11,7 +11,7 @@ import { JwtModule } from '@nestjs/jwt';
     TypeOrmModule.forFeature([User]),
     JwtModule.register({
       secret: process.env.JWT_SECRET || 'default_secret', // Use environment variable for security
-      signOptions: { expiresIn: '1h' }, // Token expires in 1 hour
+      signOptions: { expiresIn: '5h' }, // Token expires in 1 hour
     }),
   ],
   providers: [UserService, JwtAuthGuard],
