@@ -1,7 +1,7 @@
 import JobApplicationsTable from "@/components/molecules/JobApplications";
 import React from "react";
 
-const Home: React.FC = () => {
+const Home = () => {
   return (
     <div className="h-[500px] flex-shrink-0 antialiased">
       <div className="p-4 bg-gray-100 mt-[70px] min-h-screen flex justify-center items-center">
