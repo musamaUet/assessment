@@ -23,7 +23,7 @@ export default function Login() {
     const { login } = useLoginService();
 
     /* HANDLERS */
-    const onLoginDetailsChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const onLoginDetailsChange = (e) => {
         const { name, value } = e.target;
         setLoginDetails((prev) => ({
             ...prev,

@@ -1,7 +1,7 @@
 import React from "react";
 import SavedQuestionsModule from "@/modules/SavedQuestionsModule";
 
-const SavedQuestions: React.FC = () => {
+const SavedQuestions = () => {
   return (
     <div className="h-[500px] flex-shrink-0 antialiased">
       <div className="p-4 bg-gray-100 mt-[70px] ml-[18%] min-h-screen flex justify-center items-center">

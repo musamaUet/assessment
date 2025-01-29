@@ -9,8 +9,8 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }) => {
   const location = useLocation();
   const { user } = useSelector((state) => state.user);
 
-  const trigger = useRef<HTMLButtonElement>(null);
-  const sidebar = useRef<HTMLElement>(null);
+  const trigger = useRef(null);
+  const sidebar = useRef(null);
 
   const [sidebarExpanded, setSidebarExpanded] = useState(() => {
     const storedSidebarExpanded = localStorage.getItem("sidebar-expanded");
